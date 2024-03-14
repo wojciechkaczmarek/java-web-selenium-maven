@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regression" parallel="tests" thread-count="10">
+    <test name="Method based example">
+        <parameter name="browserType" value="firefox"/>
+        
+        <classes>
+            <class name="WebTests.ServiceTests">
+                <methods>
+                    <include name="Case1_VerifySearchResultDisplayed"/>
+                    <include name="Case2_VerifySuburbServiceCentreDisplayed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

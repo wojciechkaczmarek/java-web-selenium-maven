@@ -7,19 +7,18 @@ import PageFactory.ServiceNSW.ServiceLocateUsPage;
 import Utilities.DriverFactory;
 import Utilities.DriverFactory.browserType;
 import com.google.gson.Gson;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 import java.io.FileReader;
 import java.io.Reader;
 import java.util.concurrent.TimeUnit;
 import java.io.IOException;
-import static org.junit.Assert.assertTrue;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+import static org.testng.Assert.assertTrue;
+
 public class ServiceTests {
 
     WebDriver driver;
@@ -30,7 +29,7 @@ public class ServiceTests {
     Gson gson = new Gson();
     String pathOfData = System.getProperty("user.dir")+"/src/main/resource/DataFiles/Suburb.json";
 
-    @Before
+    @BeforeMethod
     public void Setup(){
 
         driver = DriverFactory.getDriver(type);
@@ -46,7 +45,7 @@ public class ServiceTests {
         serviceLocateUsPageObj = new ServiceLocateUsPage(driver);
     }
 
-    @After
+    @AfterMethod
     public void TearDown(){
 
         driver.quit();

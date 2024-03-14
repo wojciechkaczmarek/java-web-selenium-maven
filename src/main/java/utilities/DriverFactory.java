@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class DriverFactory {
 
-    public static WebDriver getDriver(BrowserType type){
+    public static WebDriver getDriver(BrowserType type) {
         return switch (type) {
             case FIREFOX -> {
                 FirefoxOptions options = new FirefoxOptions();

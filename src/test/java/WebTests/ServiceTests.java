@@ -1,9 +1,9 @@
 package WebTests;
 
 import utilities.*;
-import PageFactory.ServiceNSW.ServiceHomePage;
-import PageFactory.ServiceNSW.ServiceApplyNumberPlatePage;
-import PageFactory.ServiceNSW.ServiceLocateUsPage;
+import service_nsw.ServiceHomePage;
+import service_nsw.ServiceApplyNumberPlatePage;
+import service_nsw.ServiceLocateUsPage;
 import utilities.DriverFactory;
 import utilities.BrowserType;
 import com.google.gson.Gson;
@@ -66,17 +66,17 @@ public class ServiceTests {
 
         assertTrue(driver.getTitle().contains(serviceHomePageObj.PAGE_TITLE));
 
-        serviceHomePageObj.StartYourSearch("Apply for a number plate");
+        serviceHomePageObj.startYourSearch("Apply for a number plate");
 
         assertTrue(driver.getTitle().contains("Search Results | Service NSW"));
 
-        assertTrue(serviceHomePageObj.IsLinkApplyNumberPlateDiplayed());
+        assertTrue(serviceHomePageObj.isLinkApplyNumberPlateDisplayed());
 
         System.out.println(">>>> Successfully Displayed Apply for a number plate link in Results ");
 
-        serviceHomePageObj.SelectLinkApplyNumberPlate();
+        serviceHomePageObj.selectLinkApplyNumberPlate();
 
-        assertTrue(serviceApplyNumberPlatePageObj.IsApplyNumberPlatePageDiplayed());
+        assertTrue(serviceApplyNumberPlatePageObj.isApplyNumberPlatePageDisplayed());
 
         assertTrue(driver.getTitle().contains(serviceApplyNumberPlatePageObj.PAGE_TITLE));
 
@@ -101,7 +101,7 @@ public class ServiceTests {
 
         assertTrue(driver.getTitle().contains(serviceApplyNumberPlatePageObj.PAGE_TITLE));
 
-        serviceApplyNumberPlatePageObj.SelectLocateUs();
+        serviceApplyNumberPlatePageObj.selectLocateUs();
 
         assertTrue(driver.getTitle().contains(serviceLocateUsPageObj.PAGE_TITLE));
 
@@ -121,9 +121,9 @@ public class ServiceTests {
 
                     driver.navigate().refresh();
 
-                    serviceLocateUsPageObj.StartYourSearch(sub.getSuburbName());
+                    serviceLocateUsPageObj.startYourSearch(sub.getSuburbName());
 
-                    assertTrue(serviceLocateUsPageObj.IsServiceCenterDisplayed(sub.getServiceCenter()));
+                    assertTrue(serviceLocateUsPageObj.isServiceCenterDisplayed(sub.getServiceCenter()));
 
                 }
             }

@@ -1,27 +1,26 @@
-package PageFactory.ServiceNSW;
+package service_nsw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import pages.BasePage;
 
-public class ServiceLocateUsPage {
+import java.util.List;
+
+public class ServiceLocateUsPage extends BasePage {
 
     //final variables
     public static final String PAGE_TITLE = "Find a Service NSW location | Service NSW";
     public static final String PAGE_URL = "https://www.service.nsw.gov.au/service-centre";
 
-    //local webdriver variable
-    WebDriver driver;
-
     @FindBy(xpath="/html/body/div[1]/header/div/h1")
     WebElement headingTextLocateUs;
 
     @FindBy(xpath="//*[@id=\"locatorTextSearch\"]")
-    WebElement textFeildSearchBox;
+    WebElement textFieldSearchBox;
 
     @FindBy(xpath="//*[@id='locator']/div/div/form/div/div[2]/button")
     WebElement buttonSearch;
@@ -35,29 +34,22 @@ public class ServiceLocateUsPage {
     By suggestionLocation = By.xpath("//*[@id=\"locatorAutocomplete\"]");
 
     //Page Class Constructor
-    public ServiceLocateUsPage(WebDriver driver){
-
-        this.driver = driver;
-
-        PageFactory.initElements(driver, this);
+    public ServiceLocateUsPage(WebDriver driver) {
+        super(driver);
     }
 
     //Action Methods
-    private void InsertSearchText(String searchText){
+    private void insertSearchText(String searchText) {
 
-        textFeildSearchBox.isDisplayed();
+        textFieldSearchBox.clear();
 
-        textFeildSearchBox.clear();
-
-        textFeildSearchBox.sendKeys(searchText);
+        textFieldSearchBox.sendKeys(searchText);
     }
 
-    private void PressSearchButton() {
+    private void pressSearchButton() {
 
         try {
-            TimeUnit.SECONDS.sleep(10);
-
-            buttonSearch.isDisplayed();
+            wait.until(ExpectedConditions.elementToBeClickable(buttonSearch));
 
             buttonSearch.click();
 
@@ -67,37 +59,35 @@ public class ServiceLocateUsPage {
         }
     }
 
-    private void SelectSearchText(){
+    private void selectSearchText() {
 
-        textFeildSearchBox.sendKeys(Keys.ARROW_DOWN);
+        textFieldSearchBox.sendKeys(Keys.ARROW_DOWN);
 
-        textFeildSearchBox.sendKeys(Keys.ENTER);
+        textFieldSearchBox.sendKeys(Keys.ENTER);
     }
 
-    public void StartYourSearch(String searchText){
+    public void startYourSearch(String searchText) {
 
-        InsertSearchText(searchText);
+        insertSearchText(searchText);
 
-        PressSearchButton();
+        pressSearchButton();
     }
 
-    public void SelectLocateUs(){
-
-        driver.findElement(buttonLocateUs).isDisplayed();
+    public void selectLocateUs() {
 
         driver.findElement(buttonLocateUs).click();
     }
 
-    public boolean IsServiceCenterDisplayed(String serviceCentre) {
+    public boolean isServiceCenterDisplayed(String serviceCentre) {
 
         boolean result = false;
 
         try {
-            TimeUnit.SECONDS.sleep(5);
+            List<WebElement> results = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(listOfLocationResult));
 
-            System.out.println("> No of Location Found = " + driver.findElements(listOfLocationResult).size());
+            System.out.println("> No of Location Found = " + results.size());
 
-            for (WebElement elementLocation : driver.findElements(listOfLocationResult)) {
+            for (WebElement elementLocation : results) {
 
                 if (elementLocation.findElement(By.xpath(" . //a")).getText().contains(serviceCentre)) {
 

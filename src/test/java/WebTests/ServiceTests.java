@@ -1,11 +1,11 @@
 package WebTests;
 
-import Utilities.*;
+import utilities.*;
 import PageFactory.ServiceNSW.ServiceHomePage;
 import PageFactory.ServiceNSW.ServiceApplyNumberPlatePage;
 import PageFactory.ServiceNSW.ServiceLocateUsPage;
-import Utilities.DriverFactory;
-import Utilities.DriverFactory.browserType;
+import utilities.DriverFactory;
+import utilities.BrowserType;
 import com.google.gson.Gson;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -22,7 +22,7 @@ import static org.testng.Assert.assertTrue;
 public class ServiceTests {
 
     WebDriver driver;
-    browserType type = browserType.CHROME_MAC;
+    BrowserType type = BrowserType.CHROME;
     ServiceHomePage serviceHomePageObj;
     ServiceApplyNumberPlatePage serviceApplyNumberPlatePageObj;
     ServiceLocateUsPage serviceLocateUsPageObj;

@@ -4,24 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abaed55b-c8f7-4538-aa68-76722e6e2df1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resource/XmlTestNG/regression.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="abaed55b-c8f7-4538-aa68-76722e6e2df1" name="Changes" comment="Modernisation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utilities/BrowserType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/DriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/HelperClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/HelperClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/Suburb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/Suburb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/SuburbGson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/SuburbGson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/WebDrivers/chromedriverMac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/WebDrivers/chromedriverWin.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/WebDrivers/geckodriverMac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/WebDrivers/geckodriverWin.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/WebTests/ServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/WebTests/ServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,6 +40,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resource/XmlTestNG/regression.xml" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -72,6 +79,18 @@
       <option name="presentableId" value="Default" />
       <updated>1710439448177</updated>
     </task>
+    <task id="LOCAL-00001" summary="Transition to TestNG">
+      <created>1710440216655</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710440216655</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Transition to TestNG" />
+    <option name="LAST_COMMIT_MESSAGE" value="Transition to TestNG" />
   </component>
 </project>

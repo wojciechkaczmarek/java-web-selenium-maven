@@ -28,7 +28,7 @@ public class ServiceTests extends BaseTest {
         serviceHomePage = new ServiceHomePage(this);
         assertTrue(driver.getTitle().contains(ServiceHomePage.PAGE_TITLE));
 
-        serviceHomePage.startYourSearch("Apply for a number plate");
+        serviceHomePage.startGlobalSearch("Apply for a number plate");
 
         assertTrue(driver.getTitle().contains("Search Results | Service NSW"));
         assertTrue(serviceHomePage.isLinkApplyNumberPlateDisplayed());
@@ -65,7 +65,7 @@ public class ServiceTests extends BaseTest {
         assertTrue(driver.getTitle().contains(ServiceLocateUsPage.PAGE_TITLE));
         assertTrue(driver.getCurrentUrl().contains(ServiceLocateUsPage.PAGE_URL));
         System.out.println("Finding Service Center in " + suburbName);
-        serviceLocateUsPage.startYourSearch(suburbName);
+        serviceLocateUsPage.startLocationSearch(suburbName);
 
         assertTrue(serviceLocateUsPage.isServiceCenterDisplayed(serviceCenter));
 

@@ -2,7 +2,6 @@ package service_nsw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +10,7 @@ import utilities.BaseTest;
 
 import java.util.List;
 
-public class ServiceLocateUsPage extends BasePage {
+public class ServiceLocateUsPage extends ServicePage {
 
     //final variables
     public static final String PAGE_TITLE = "Find a Service NSW location | Service NSW";
@@ -20,19 +19,17 @@ public class ServiceLocateUsPage extends BasePage {
     @FindBy(xpath="/html/body/div[1]/header/div/h1")
     WebElement headingTextLocateUs;
 
-    @FindBy(xpath="//*[@id=\"locatorTextSearch\"]")
-    WebElement textFieldSearchBox;
+    @FindBy(xpath="//*[@id='locatorTextSearch']")
+    WebElement locationTextFieldSearchBox;
 
-    @FindBy(xpath="//*[@id='locator']/div/div/form/div/div[2]/button")
-    WebElement buttonSearch;
-
-    By buttonLocateUs = By.linkText("Locate us");
+    @FindBy(xpath="//*[@id='locator']//*[contains(@class,'actions')]//button")
+    WebElement locationButtonSearch;
 
     By locationListView = By.xpath("//*[@id='locatorListView']");
 
     By listOfLocationResult = By.xpath("//*[@class='locator__results-list']/div");
 
-    By suggestionLocation = By.xpath("//*[@id=\"locatorAutocomplete\"]");
+    By suggestionLocation = By.xpath("//*[@id='locatorAutocomplete']");
 
     //Page Class Constructor
     public ServiceLocateUsPage(BaseTest caller) {
@@ -40,43 +37,31 @@ public class ServiceLocateUsPage extends BasePage {
     }
 
     //Action Methods
-    private void insertSearchText(String searchText) {
+    public void startLocationSearch(String suburbName) {
 
-        textFieldSearchBox.clear();
+        insertLocationSearchText(suburbName);
 
-        textFieldSearchBox.sendKeys(searchText);
+        pressLocationSearchButton();
     }
 
-    private void pressSearchButton() {
+    protected void insertLocationSearchText(String searchText) {
+
+        locationTextFieldSearchBox.clear();
+
+        locationTextFieldSearchBox.sendKeys(searchText);
+    }
+
+    protected void pressLocationSearchButton() {
 
         try {
-            wait.until(ExpectedConditions.elementToBeClickable(buttonSearch));
+            wait.until(ExpectedConditions.elementToBeClickable(locationButtonSearch));
 
-            buttonSearch.click();
+            locationButtonSearch.click();
 
         } catch (Exception ex) {
 
             System.out.println(ex);
         }
-    }
-
-    private void selectSearchText() {
-
-        textFieldSearchBox.sendKeys(Keys.ARROW_DOWN);
-
-        textFieldSearchBox.sendKeys(Keys.ENTER);
-    }
-
-    public void startYourSearch(String searchText) {
-
-        insertSearchText(searchText);
-
-        pressSearchButton();
-    }
-
-    public void selectLocateUs() {
-
-        driver.findElement(buttonLocateUs).click();
     }
 
     public boolean isServiceCenterDisplayed(String serviceCentre) {

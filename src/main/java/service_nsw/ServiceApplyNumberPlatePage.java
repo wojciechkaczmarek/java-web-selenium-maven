@@ -1,7 +1,6 @@
 package service_nsw;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,10 +15,10 @@ public class ServiceApplyNumberPlatePage extends BasePage {
     public static final String PAGE_TITLE = "Apply for a number plate | Service NSW";
     public static final String PAGE_URL = "https://www.service.nsw.gov.au/transaction/apply-number-plate";
 
-    @FindBy(xpath="//*[@id=\"block-system-main\"]/div/div/div/div[1]/div[3]/div/h1")
+    @FindBy(xpath="//*[@id='block-system-main']/div/div/div/div[1]/div[3]/div/h1")
     WebElement headingTextApplyForNumberPlate;
 
-    By buttonLocateUs = By.linkText("Locate us");
+    By buttonLocateUs = By.linkText("Find locations");
 
     By buttonOrderOnline = By.xpath("//a[@href='/node/69081']");
 

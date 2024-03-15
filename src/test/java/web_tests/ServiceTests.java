@@ -1,25 +1,16 @@
 package web_tests;
 
+import org.testng.annotations.DataProvider;
 import utilities.*;
 import service_nsw.ServiceHomePage;
 import service_nsw.ServiceApplyNumberPlatePage;
 import service_nsw.ServiceLocateUsPage;
-import com.google.gson.Gson;
 import org.testng.annotations.Test;
-
-import java.io.FileReader;
-import java.io.Reader;
-import java.io.IOException;
 
 import static org.testng.Assert.assertTrue;
 
 public class ServiceTests extends BaseTest {
 
-
-
-
-    Gson gson = new Gson();
-    String pathOfData = System.getProperty("user.dir")+"/src/main/resource/DataFiles/Suburb.json";
 
     //    Case 1
 //    Scenario:  Validate that search SHOULD display desired result and navigate to page
@@ -54,14 +45,14 @@ public class ServiceTests extends BaseTest {
 
     }
 
-//    Case 2
+    //    Case 2
 //    Scenario:  Validate that Service Center page SHOULD display location of service centre for given Suburb
 //    Given      I have loaded Service Center - Locate US page
 //    When       I will search service center for a Suburb
 //    Then       I will find that Service Center page SHOULD display location of service centre for given Suburb
 //
-    @Test
-    public void Case2_VerifySuburbServiceCentreDisplayed() {
+    @Test(dataProvider = "suburbsData")
+    public void Case2_VerifySuburbServiceCentreDisplayed(String suburbName, String serviceCenter) {
         ServiceApplyNumberPlatePage serviceApplyNumberPlatePage;
         ServiceLocateUsPage serviceLocateUsPage;
 
@@ -73,31 +64,16 @@ public class ServiceTests extends BaseTest {
         serviceLocateUsPage = new ServiceLocateUsPage(this);
         assertTrue(driver.getTitle().contains(ServiceLocateUsPage.PAGE_TITLE));
         assertTrue(driver.getCurrentUrl().contains(ServiceLocateUsPage.PAGE_URL));
+        System.out.println("Finding Service Center in " + suburbName);
+        serviceLocateUsPage.startYourSearch(suburbName);
 
-        try (Reader reader = new FileReader(pathOfData)) {
-
-            //  Convert JSON to Java Object
-            SuburbGson suburbGson = gson.fromJson(reader, SuburbGson.class);
-
-            if (suburbGson != null) {
-
-                for (Suburb sub : suburbGson.getSuburb()) {
-
-                    System.out.println("Finding Service Center in "+sub.getSuburbName());
-
-                    driver.navigate().refresh();
-
-                    serviceLocateUsPage.startYourSearch(sub.getSuburbName());
-
-                    assertTrue(serviceLocateUsPage.isServiceCenterDisplayed(sub.getServiceCenter()));
-
-                }
-            }
-        } catch (IOException e) {
-
-            e.printStackTrace();
-        }
+        assertTrue(serviceLocateUsPage.isServiceCenterDisplayed(serviceCenter));
 
         driver.close();
+    }
+
+    @DataProvider(name = "suburbsData")
+    public Object[][] suburbsData() {
+        return DataProviderNSW.loadSuburbsData();
     }
 }

@@ -9,11 +9,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import service_nsw.ServiceApplyNumberPlatePage;
-import service_nsw.ServiceHomePage;
-import service_nsw.ServiceLocateUsPage;
-import utilities.BrowserType;
-import utilities.DriverFactory;
 
 import java.time.Duration;
 import java.util.Arrays;
@@ -35,7 +30,7 @@ public class BaseTest {
     @BeforeMethod
     @Parameters({"browserType"})
     public void setup(@Optional("chrome") String browserType) {
-        type = BrowserType.valueOf(browserType);
+        type = BrowserType.valueOf(browserType.toUpperCase());
         driver = DriverFactory.getDriver(type);
         driver.manage().window().maximize();
 

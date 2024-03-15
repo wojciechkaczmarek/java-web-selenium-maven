@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
+import utilities.BaseTest;
 
 import java.util.NoSuchElementException;
 
@@ -29,8 +30,8 @@ public class ServiceHomePage extends BasePage {
 
 
     //Page Class Constructor
-    public ServiceHomePage(WebDriver driver) {
-        super(driver);
+    public ServiceHomePage(BaseTest caller) {
+        super(caller);
     }
 
     //Action Methods

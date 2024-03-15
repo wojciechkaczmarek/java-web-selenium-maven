@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abaed55b-c8f7-4538-aa68-76722e6e2df1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utilities/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageFactory/ServiceNSW/ServiceApplyNumberPlatePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serviceNSW/ServiceApplyNumberPlatePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageFactory/ServiceNSW/ServiceHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serviceNSW/ServiceHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageFactory/ServiceNSW/ServiceLocateUsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serviceNSW/ServiceLocateUsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/DriverFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/WebTests/ServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/WebTests/ServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service_nsw/ServiceApplyNumberPlatePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service_nsw/ServiceApplyNumberPlatePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service_nsw/ServiceHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service_nsw/ServiceHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service_nsw/ServiceLocateUsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service_nsw/ServiceLocateUsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/XmlTestNG/regression.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/XmlTestNG/regression.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/WebTests/ServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web_tests/ServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +51,7 @@
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="web_tests" />
       <recent name="pages" />
     </key>
   </component>
@@ -95,12 +99,20 @@
       <option name="project" value="LOCAL" />
       <updated>1710441390082</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactor of Page Objects">
+      <created>1710444952114</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710444952114</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Transition to TestNG" />
     <MESSAGE value="Modernisation of DriverFactory (no webdriver binaries)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modernisation of DriverFactory (no webdriver binaries)" />
+    <MESSAGE value="Refactor of Page Objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor of Page Objects" />
   </component>
 </project>

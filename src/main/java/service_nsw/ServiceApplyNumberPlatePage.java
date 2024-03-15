@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
+import utilities.BaseTest;
 
 import java.util.NoSuchElementException;
 
@@ -23,8 +24,8 @@ public class ServiceApplyNumberPlatePage extends BasePage {
     By buttonOrderOnline = By.xpath("//a[@href='/node/69081']");
 
     //Page Class Constructor
-    public ServiceApplyNumberPlatePage(WebDriver driver) {
-        super(driver);
+    public ServiceApplyNumberPlatePage(BaseTest caller) {
+        super(caller);
     }
 
     //Action Methods

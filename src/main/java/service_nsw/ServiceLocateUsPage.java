@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
+import utilities.BaseTest;
 
 import java.util.List;
 
@@ -34,8 +35,8 @@ public class ServiceLocateUsPage extends BasePage {
     By suggestionLocation = By.xpath("//*[@id=\"locatorAutocomplete\"]");
 
     //Page Class Constructor
-    public ServiceLocateUsPage(WebDriver driver) {
-        super(driver);
+    public ServiceLocateUsPage(BaseTest caller) {
+        super(caller);
     }
 
     //Action Methods

@@ -5,7 +5,7 @@
         <parameter name="browserType" value="firefox"/>
         
         <classes>
-            <class name="WebTests.ServiceTests">
+            <class name="web_tests.ServiceTests">
                 <methods>
                     <include name="Case1_VerifySearchResultDisplayed"/>
                     <include name="Case2_VerifySuburbServiceCentreDisplayed"/>
